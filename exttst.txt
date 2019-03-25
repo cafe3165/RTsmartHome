@@ -1,6 +1,6 @@
 1
-device:['air conditioner']
-location:['bedroom']
-attribute:['temperature']
-operation:turn up
-turn up the temperature of air conditioner in bedroom.
+不存在设备
+location:['balcony']
+attribute:['humidity']
+operation:increase
+increase the humidity of balcony.

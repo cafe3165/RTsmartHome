@@ -67,6 +67,11 @@ public class ConfigWaterPump {
 		apiMaps.put(SmartWaterPump.class.getName() + "." + SmartWaterPump.class.getMethod("getType").getName(), Arrays
 				.asList(new String[] { Wilo.class.getName() + "." + Wilo.class.getMethod("getType").getName() }));
 		
+		
+//		1.8
+		apiMaps.put(SmartWaterPump.class.getName() + "." + SmartWaterPump.class.getMethod("water").getName(), Arrays
+				.asList(new String[] { Wilo.class.getName() + "." + Wilo.class.getMethod("water").getName() }));
+		
 	}
 
 

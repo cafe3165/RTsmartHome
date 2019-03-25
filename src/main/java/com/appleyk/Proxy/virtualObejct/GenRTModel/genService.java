@@ -77,7 +77,7 @@ public class genService {
 		String Effect13 = "Reduce";
 
 		String ServiceId14 = "S14";
-		String Effect14 = "Asssign";
+		String Effect14 = "Assign";
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //		格力空调 卧室
 		String ServiceId51 = "S51";

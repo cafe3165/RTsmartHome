@@ -55,7 +55,12 @@ public class judge {
 		case "turnon":
 			op = "on";
 			break;
-
+		case "assign":
+			op = "Assign";
+			break;	
+		case "increase":
+			op = "Increase";
+			break;	
 		default:
 			break;
 		}

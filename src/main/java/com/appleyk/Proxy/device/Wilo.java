@@ -55,5 +55,10 @@ public class Wilo {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	public void water() {
+		Humidity+=1.0;
+		System.out.println("设备 "+id+" 正在浇水，湿度为 "+Humidity);
+	}
 
 }

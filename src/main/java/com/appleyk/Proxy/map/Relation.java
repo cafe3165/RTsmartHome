@@ -133,7 +133,7 @@ public class Relation {
 			TestCmd.testCmd(cmdMaps, services, SerDevMaps, idmaps, idObjmaps, objMaps, serMap, contMap);
 		} else {
 			System.out.println("这是开关操作");
-			TestCmd.testCmd2(cmdMaps, airConditions, idmaps, idObjmaps, objMaps);
+			TestCmd.testCmd2(cmdMaps, idmaps, idObjmaps, objMaps,dmap);
 		}
 
 //		inference.judgeContext(contexts, services, serMap, contMap);

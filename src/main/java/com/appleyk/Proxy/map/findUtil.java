@@ -42,14 +42,15 @@ public class findUtil {
 //			String sid = null;
 //			System.out.println(cmdMaps);
 		List<String> sList = services.list(false);
-		System.out.println("列出当前所有服务：");
-		System.out.println(sList);
-		System.out.println("开始寻找符合条件的服务：");
+//		System.out.println("列出当前所有服务：");
+//		System.out.println(sList);
+//		System.out.println("开始寻找符合条件的服务：");
 		for (String i : sList) {
-			System.out.println("当前服务为： " + i);
+//			System.out.println("当前服务为： " + i);
 			Service tObject = new Service();
 			tObject = (Service) services.ListProperties(i, serMap, false);
 			String effectString = judge.judgeOperation(cmdMaps.get("operation"));
+//			System.out.println(effectString);
 			if (tObject.getLName().equals(cmdMaps.get("location"))
 					&& tObject.getCType().equals(captureName(cmdMaps.get("attribute")))
 					&& tObject.getEffect().equals(effectString)) {
@@ -66,7 +67,7 @@ public class findUtil {
 				System.out.println("需要修改的属性值为：" + tObject.getCType());
 				break;
 			} else {
-				System.out.println("服务" + i + "不符合条件。");
+//				System.out.println("服务" + i + "不符合条件。");
 			}
 
 		}

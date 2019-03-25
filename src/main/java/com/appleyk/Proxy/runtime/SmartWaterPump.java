@@ -25,5 +25,6 @@ public interface SmartWaterPump {
 	public String getType();
 
 	public void setType(String type);
+	public void water();
 
 }

@@ -79,4 +79,10 @@ public class SmartWaterPumpImpl implements SmartWaterPump {
 
 	}
 
+	@Override
+	public void water() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
