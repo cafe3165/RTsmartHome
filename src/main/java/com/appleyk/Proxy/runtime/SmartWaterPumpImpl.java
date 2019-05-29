@@ -1,5 +1,7 @@
 package com.appleyk.Proxy.runtime;
 
+
+
 public class SmartWaterPumpImpl implements SmartWaterPump {
 	private String id;
 	private String locationName;
