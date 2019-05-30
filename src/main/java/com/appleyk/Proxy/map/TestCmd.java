@@ -1,14 +1,12 @@
 package com.appleyk.Proxy.map;
 
+import com.appleyk.Proxy.runtime.AirCondition;
+import com.appleyk.Proxy.runtime.Light;
+import com.appleyk.Proxy.virtualObejct.Services;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.appleyk.Proxy.runtime.AirCondition;
-import com.appleyk.Proxy.runtime.Light;
-import com.appleyk.Proxy.util.sleepUtil;
-import com.appleyk.Proxy.virtualObejct.AirConditioners;
-import com.appleyk.Proxy.virtualObejct.Services;
 
 public class TestCmd {
 //	核心是去寻找设备，并改变其状态
@@ -74,8 +72,7 @@ public class TestCmd {
 //		System.out.println("根据已知信息，寻找对应服务。");
 		doMap = findUtil.findSer(cmdMaps, services, serMap);
 		
-//		System.out.println("开始执行服务操作：");
-//		System.out.println(doMap);
+		System.out.println(doMap);
 		String SerId = doMap.get("SerId");
 		String Value = doMap.get("Value");
 		String SKey = doMap.get("SKey");

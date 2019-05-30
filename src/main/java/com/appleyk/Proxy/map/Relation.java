@@ -1,28 +1,12 @@
 package com.appleyk.Proxy.map;
 
 import com.appleyk.Proxy.Proxy.ProxyUtils;
-import com.appleyk.Proxy.virtualObejct.Services;
-import com.appleyk.Proxy.virtualObejct.Users;
-import com.appleyk.Proxy.virtualObejct.WaterPumps;
-import com.appleyk.Proxy.virtualObejct.GenRTModel.genContext;
-import com.appleyk.Proxy.virtualObejct.GenRTModel.genDevice;
-import com.appleyk.Proxy.virtualObejct.GenRTModel.genLocation;
-import com.appleyk.Proxy.virtualObejct.GenRTModel.genService;
-import com.appleyk.Proxy.virtualObejct.GenRTModel.genUser;
-import com.appleyk.Proxy.virtualObejct.Contexts;
-import com.appleyk.Proxy.virtualObejct.Devices;
-import com.appleyk.Proxy.virtualObejct.FlowerMonitors;
-import com.appleyk.Proxy.virtualObejct.LEDs;
-import com.appleyk.Proxy.virtualObejct.Lights;
-import com.appleyk.Proxy.virtualObejct.Locations;
-import com.appleyk.Proxy.virtualObejct.PMMonitors;
 import com.appleyk.Proxy.map.config.ConfigDevices;
-import com.appleyk.Proxy.virtualObejct.AirCleaners;
-import com.appleyk.Proxy.virtualObejct.AirConditioners;
 import com.appleyk.Proxy.util.fileUtil;
+import com.appleyk.Proxy.virtualObejct.*;
+import com.appleyk.Proxy.virtualObejct.GenRTModel.*;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,7 +38,17 @@ public class Relation {
     public static Map<String, String> serConMap = new HashMap<>();
     //	存放环境id与环境对象的映射
     public static Map<String, Object> contMap = new HashMap<>();
+    //		存放位置id与位置对象的映射
+    public static Map<String, Object> locationMap = new HashMap<>();
 
+    //		存放位置id与位置名的映射
+    public static Map<String, String> locIdNameMap = new HashMap<>();
+
+    //		存放用戶id与用戶对象的映射
+    public static Map<String, Object> userMap = new HashMap<>();
+
+    //		存放用戶id与用戶名的映射
+    public static Map<String, String> userIdNameMap = new HashMap<>();
     /**
      * 这边应该是读取配置文件得到映射关系 ，但我这边直接初始化映射关系
      */
@@ -64,17 +58,7 @@ public class Relation {
      */
     public static void generateDeviceAndRuntime(Map<String, String> cmdMaps) throws Exception {
 
-//		存放位置id与位置对象的映射
-        Map<String, Object> locationMap = new HashMap<>();
 
-//		存放位置id与位置名的映射
-        Map<String, String> locIdNameMap = new HashMap<>();
-
-//		存放用戶id与用戶对象的映射
-        Map<String, Object> userMap = new HashMap<>();
-
-//		存放用戶id与用戶名的映射
-        Map<String, String> userIdNameMap = new HashMap<>();
 
 //		List<HashMap<String, Object>> idObjList = new ArrayList<HashMap<String,Object>>();
         System.out.println("系统初始化开始。");
