@@ -114,7 +114,7 @@ public class Relation {
         System.out.println("系统初始化结束。");
         System.out.println("测试开始");
         if (!cmdMaps.get("attribute").equals("none")) {
-            TestCmd.testCmd(cmdMaps, services, SerDevMaps, idmaps, idObjmaps, objMaps, serMap, contMap);
+            TestCmd.testCmd(cmdMaps, services, SerDevMaps, idmaps, idObjmaps, objMaps, serMap, contMap,contexts);
         } else {
             System.out.println("这是开关操作");
             TestCmd.testCmd2(cmdMaps, idmaps, idObjmaps, objMaps, dmap);

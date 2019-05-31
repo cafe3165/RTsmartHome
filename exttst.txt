@@ -1,6 +1,5 @@
-1
 不存在设备
-location:['balcony']
-attribute:['humidity']
+location:['sitting room']
+attribute:['temperature']
 operation:increase
-increase the humidity of balcony.
+increase the temperature in the sitting room.
