@@ -28,14 +28,14 @@ public class smartCaseController {
 //            System.out.println(service.getServiceId());
             for (String cid : contexts.list(false)) {
                 Context context = (Context) contexts.ListProperties(cid, contMap, false);
-//
+
                 if (service.getLName().equals(context.getLName()) && service.getCType().equals(context.getCType())) {
-//
+
                     if ((service.getEffect().equals("Increase") || service.getEffect().equals("Reduce")
                             || service.getEffect().equals("Assign")) && service.getStatus().equals("on")) {
 //                        context.setCValue(service.getSValue());
 //						System.out.println(service.getServiceId() + context.getCId());
-//                        context.setCValue(service.getSValue());
+//                        context.setCVale(service.getSValue());
                         System.out.println(service.getEffect());
                         System.out.println(context.getRMax());
                     }
