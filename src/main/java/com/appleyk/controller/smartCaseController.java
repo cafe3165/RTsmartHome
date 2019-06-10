@@ -36,8 +36,9 @@ public class smartCaseController {
 //                        context.setCValue(service.getSValue());
 //						System.out.println(service.getServiceId() + context.getCId());
 //                        context.setCVale(service.getSValue());
-                        System.out.println(service.getEffect());
-                        System.out.println(context.getRMax());
+//                        System.out.println(service.getEffect());
+//                        System.out.println(context.getRMax());
+                        
                     }
 
 
