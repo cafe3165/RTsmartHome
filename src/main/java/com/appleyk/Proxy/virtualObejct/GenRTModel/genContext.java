@@ -1,14 +1,14 @@
 package com.appleyk.Proxy.virtualObejct.GenRTModel;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import com.appleyk.Proxy.virtualObejct.Context;
 import com.appleyk.Proxy.virtualObejct.Contexts;
 import com.appleyk.Proxy.virtualObejct.Service;
 import com.appleyk.Proxy.virtualObejct.Services;
 import com.appleyk.Proxy.virtualObejct.init.initConcept;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class genContext {
 
@@ -19,7 +19,7 @@ public class genContext {
 		String CUName11 = "Jack";
 		String CCType11 = "Temperature";
 		double RMin11 = 19.0;
-		double RMax11 = 22.0;
+		double RMax11 = 26.0;
 		String CID11 = "C11";
 
 		String CCType13 = "Brightness";

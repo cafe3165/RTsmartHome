@@ -8,10 +8,10 @@ import com.appleyk.Proxy.virtualObejct.Services;
 import java.util.Map;
 
 public class inference {
-    public static void changeContext(Services services, Contexts contexts, Map<String, Object> serMap, Map<String, Object> contMap) {
+    public static void changeContext(Services services, Contexts contexts, Map<String, Object> serMap, Map<String, Object> contMap,String result) {
         services.list(true);
         contexts.list(true);
-
+        System.out.println(result);
         for (String sid : services.list(false)) {
             Service service = (Service) services.ListProperties(sid, serMap, false);
 //            System.out.println(service.getServiceId());
@@ -27,8 +27,9 @@ public class inference {
 //                        context.setCValue(service.getSValue());
                         System.out.println(service.getEffect());
                         System.out.println(context.getRMax());
-                    }
+                        System.out.println(context.getRMin());
 
+                    }
 
 //
                 }

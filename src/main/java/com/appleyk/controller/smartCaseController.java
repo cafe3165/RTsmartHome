@@ -33,11 +33,11 @@ public class smartCaseController {
 
                     if ((service.getEffect().equals("Increase") || service.getEffect().equals("Reduce")
                             || service.getEffect().equals("Assign")) && service.getStatus().equals("on")) {
-//                        context.setCValue(service.getSValue());
-//						System.out.println(service.getServiceId() + context.getCId());
-//                        context.setCVale(service.getSValue());
+////                        context.setCValue(service.getSValue());
+////						System.out.println(service.getServiceId() + context.getCId());
 //                        System.out.println(service.getEffect());
 //                        System.out.println(context.getRMax());
+//                        System.out.println(context.getRMin());
                         
                     }
 

@@ -1,14 +1,12 @@
 package com.appleyk.Proxy.virtualObejct;
 
+import com.appleyk.Proxy.runtime.AirCondition;
+import com.appleyk.Proxy.runtime.SmartWaterPump;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.appleyk.Proxy.runtime.AirCondition;
-import com.appleyk.Proxy.runtime.SmartWaterPump;
-import com.appleyk.Proxy.util.sleepUtil;
-import com.appleyk.Proxy.virtualObejct.Service;
 
 public class Services {
 	public static List<String> sl = new ArrayList<String>();
@@ -60,10 +58,10 @@ public class Services {
 	}
 
 	// 对服务进行属性设置从而转化成对设备的设值
-	public void SetDevProperties(String SerId, String Value, String SKey, Map<String, String> SerDevMaps,
+	public String SetDevProperties(String SerId, String Value, String SKey, Map<String, String> SerDevMaps,
 			Map<String, String> idmaps, Map<String, Object> idObjmaps, Map<Object, Object> objMaps,
 			Map<String, Object> SerMap, Map<String, Object> contMap) throws InterruptedException {
-//
+        String ValueString=null;
 //		System.out.println("SerId: " + SerId);
 //		System.out.println("Value: " + Value);
 //		System.out.println("Skey: " + SKey);
@@ -121,20 +119,21 @@ public class Services {
 				}
 
 				System.out.println("Set Service.SValue and Device.Key Success!");
-				return;
+				return Value.toString();
 			} else {
 				if (isNum(Value)) {
 					System.out.println("不是Assign情况，不能赋值");
-					return;
+					return null;
 				}
 				if (SKey.equals("Status")) {
 					airCon.setStatus(Value);
 					currentService.setStatus(Value);
 //					System.out.println("Set Service.Status and Device.Status Success!");
-					return;
+					return Value.toString();
 				}
 //				System.out.println(SKey);
 				if (SKey.equals("CType")) {
+				    String tempValue=null;
 					if (Value.equals("stepUp")) {
 //						System.out.println("该操作为"+currentService.getEffect()+"操作");
 						System.out.println("当前服务 " + currentService.getServiceId() + " 状态为：" + currentService.getStatus());
@@ -148,7 +147,7 @@ public class Services {
 						airCon.warm();
 						Service rService = (Service) findAnotherService(SerMap, Value, currentService);
 						rService.setStatus("off");
-
+                        tempValue=String.valueOf(currentService.getSValue());
 					} else {
 //						System.out.println("该操作为"+currentService.getEffect()+"操作");
 						System.out.println("当前服务 " + currentService.getServiceId() + " 状态为：" + currentService.getStatus());
@@ -160,10 +159,12 @@ public class Services {
 						System.out.println("当前服务 " + currentService.getServiceId() + " 状态为：" + currentService.getStatus());
 						System.out.println("当前服务SValue值为：" + currentService.getSValue());
 						airCon.cool();
-					}
+                        tempValue=String.valueOf(currentService.getSValue());
+
+                    }
 
 //					System.out.println("Set Service.Status and Device.Status Success!");
-					return;
+					return tempValue;
 				}
 
 			}
@@ -188,21 +189,22 @@ public class Services {
 				}
 
 				System.out.println("Set Service.SValue and Device.Key Success!");
-				return;
+				return null;
 			} else {
 				if (isNum(Value)) {
 					System.out.println("不是Assign情况，不能赋值");
-					return;
+					return null;
 				}
 				if (SKey.equals("Status")) {
 					swp.setStatus(Value);
 					currentService.setStatus(Value);
 //					System.out.println("Set Service.Status and Device.Status Success!");
-					return;
+					return Value.toString();
 				}
 //				System.out.println(SKey);
 				if (SKey.equals("CType")) {
-					if (Value.equals("stepUp")) {
+                    String tempValue=null;
+                    if (Value.equals("stepUp")) {
 //						System.out.println("该操作为"+currentService.getEffect()+"操作");
 						System.out.println("当前服务 " + currentService.getServiceId() + " 状态为：" + currentService.getStatus());
 						System.out.println("当前服务SValue值为：" + currentService.getSValue());
@@ -215,6 +217,7 @@ public class Services {
 						swp.water();
 //						Service rService = (Service) findAnotherService(SerMap, Value, currentService);
 //						rService.setStatus("off");
+                        tempValue=String.valueOf(currentService.getSValue());
 
 					} else {
 ////						System.out.println("该操作为"+currentService.getEffect()+"操作");
@@ -227,10 +230,12 @@ public class Services {
 //						System.out.println("当前服务 " + currentService.getServiceId() + " 状态为：" + currentService.getStatus());
 //						System.out.println("当前服务SValue值为：" + currentService.getSValue());
 //						swp.cool();
-					}
+                        tempValue=String.valueOf(currentService.getSValue());
+
+                    }
 
 //					System.out.println("Set Service.Status and Device.Status Success!");
-					return;
+					return tempValue;
 				}
 
 			}
@@ -244,7 +249,7 @@ public class Services {
 		
 		
 		
-
+    return ValueString;
 	}
 
 // 		数字判断函数

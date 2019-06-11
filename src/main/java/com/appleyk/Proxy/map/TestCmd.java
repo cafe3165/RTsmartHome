@@ -77,9 +77,9 @@ public class TestCmd {
         String SerId = doMap.get("SerId");
         String Value = doMap.get("Value");
         String SKey = doMap.get("SKey");
-        services.SetDevProperties(SerId, Value, SKey, SerDevMaps, idmaps, idObjmaps, objMaps, serMap, contMap);
+        String result=services.SetDevProperties(SerId, Value, SKey, SerDevMaps, idmaps, idObjmaps, objMaps, serMap, contMap);
 //        System.out.println(CList);
-        inference.changeContext(services, contexts, serMap, contMap);
+        inference.changeContext(services, contexts, serMap, contMap,result);
 //		for (String cid : contexts.list(false)) {
 //			Context context = (Context) contexts.ListProperties(cid, contMap, true);
 //		}
