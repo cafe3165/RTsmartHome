@@ -80,6 +80,9 @@ public class TestCmd {
         String result=services.SetDevProperties(SerId, Value, SKey, SerDevMaps, idmaps, idObjmaps, objMaps, serMap, contMap);
 //        System.out.println(CList);
         inference.changeContext(services, contexts, serMap, contMap,result);
+
+
+
 //		for (String cid : contexts.list(false)) {
 //			Context context = (Context) contexts.ListProperties(cid, contMap, true);
 //		}

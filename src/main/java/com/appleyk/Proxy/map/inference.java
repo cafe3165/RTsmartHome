@@ -8,35 +8,42 @@ import com.appleyk.Proxy.virtualObejct.Services;
 import java.util.Map;
 
 public class inference {
-    public static void changeContext(Services services, Contexts contexts, Map<String, Object> serMap, Map<String, Object> contMap,String result) {
+    public static String changeContext(Services services, Contexts contexts, Map<String, Object> serMap, Map<String, Object> contMap, String result) {
         services.list(true);
         contexts.list(true);
-        System.out.println(result);
-        for (String sid : services.list(false)) {
-            Service service = (Service) services.ListProperties(sid, serMap, false);
-//            System.out.println(service.getServiceId());
-            for (String cid : contexts.list(false)) {
-                Context context = (Context) contexts.ListProperties(cid, contMap, false);
+        double currentCValue = Double.valueOf(result);
+        String flag = null;
+//        for (String sid : services.list(false)) {
+//            Service service = (Service) services.ListProperties(sid, serMap, false);
+////            System.out.println(service.getServiceId());
+//            for (String cid : contexts.list(false)) {
+//                Context context = (Context) contexts.ListProperties(cid, contMap, false);
+////
+//                if (service.getLName().equals(context.getLName()) && service.getCType().equals(context.getCType())) {
+////
+//                    if (currentCValue < context.getRMin() || currentCValue > context.getRMax()) {
+//                        if ((service.getEffect().equals("Increase") && service.getStatus().equals("on"))) {
+//                            context.setCValue(currentCValue);
+////                            System.out.println(context.getCValue());
+//                        }
 //
-                if (service.getLName().equals(context.getLName()) && service.getCType().equals(context.getCType())) {
 //
-                    if ((service.getEffect().equals("Increase") || service.getEffect().equals("Reduce")
-                            || service.getEffect().equals("Assign")) && service.getStatus().equals("on")) {
-//                        context.setCValue(service.getSValue());
-//						System.out.println(service.getServiceId() + context.getCId());
-//                        context.setCValue(service.getSValue());
-                        System.out.println(service.getEffect());
-                        System.out.println(context.getRMax());
-                        System.out.println(context.getRMin());
+//                    }
+//
+//                }
+////
+//            }
+//        }
 
-                    }
+        for (String cid : contexts.list(false)) {
+            Context context = (Context) contexts.ListProperties(cid, contMap, false);
+            System.out.println(context.getLName()+" "+context.getUName()+" "+context.getCValue());
 
-//
-                }
-//
-            }
+
         }
 
+
+        return flag;
     }
 
     public static boolean judgeContext(Contexts contexts, Services services, Map<String, Object> serMap, Map<String, Object> contMap) {
