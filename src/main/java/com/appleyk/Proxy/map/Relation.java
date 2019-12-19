@@ -189,11 +189,11 @@ public class Relation {
     public static void main(String[] args) throws Exception {
         String arch = System.getProperty("sun.arch.data.model");
         System.out.println(arch);
-        Map<String, String> cmdMaps = new HashMap<>();
+
         ConfigDevices.config(classMaps, apiMaps);
 //		String filePath = "C:\\Users\\more\\Desktop\\code\\exttst.txt";
         String filePath = "exttst.txt";
-        cmdMaps = fileUtil.fileOp(filePath);
+        Map<String, String> cmdMaps= fileUtil.fileOp(filePath);
 //		System.out.println(cmdMaps);
         generateDeviceAndRuntime(cmdMaps);
 
